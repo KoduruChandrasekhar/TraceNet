@@ -30,6 +30,8 @@
 
 ## Contents
 
+> 📚 **More documentation:** [docs/](docs/README.md) — [Judges' guide](docs/JUDGES_GUIDE.md) · [Architecture](docs/ARCHITECTURE.md) · [Fusion algorithm](docs/FUSION_ALGORITHM.md) · [ANPR pipeline](docs/ANPR_PIPELINE.md) · [Privacy & compliance](docs/PRIVACY_AND_COMPLIANCE.md) · [FAQ](docs/FAQ.md)
+
 1. [Executive summary](#1-executive-summary)
 2. [The problem](#2-the-problem)
 3. [Our solution — four modules](#3-our-solution)
@@ -678,7 +680,7 @@ role-based access for police and ICCC workflows. Sightings are small JSON metada
   but not yet against a real municipal feed.
 - **Plate yield depends on resolution.** On low-resolution (768×432) rush-hour clips many vehicles are tracked but few
   plates are clear enough to read; this is why ghost-car re-identification exists. Higher-resolution cameras read far more.
-- **Re-ID** works with the included 512-D embedding path; the optional OSNet/VeRi-776 weights are not bundled.
+- **Re-ID** defaults to a deterministic colour/gradient descriptor (512-D); the learned OSNet/VeRi-776 model is supported but its weights are not bundled. Auto-purge/retention and mandatory reason codes are planned, not built.
 - **Hosted free tier** cannot run YOLO/PaddleOCR (RAM); ANPR evidence endpoints return empty there. Ingestion must run
   locally/edge and post sightings.
 - **Demo credentials** are public in this repository by design for judging; rotate them for any real deployment.
